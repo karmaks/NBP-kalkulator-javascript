@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Konwerter</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900&display=swap&subset=latin-ext"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__logo"><span class="header__logo_span">NBP</span> Currency Converter</div>
+        <div class="header__email">info@makka.dev</div>
+    </header>
+
+    <main class="main">
+        <section class="converter">
+            <div class="current-rate">
+                <div class="current-rate__main">EUR</div>
+                <span>=</span>
+                <div class="current-rate__second">33</div>
+            </div>
+
+            <div class="converter__fields">
+                <div class="converter__main-currency">
+                    <select class="converter__main-select" value='pln'>
+                        <option value="eur">EUR</option>
+                        <option value="pln">PLN</option>
+                        <option value="usd" selected>USD</option>
+                        <option value="gbp">GBP</option>
+                    </select>
+                    <input class="converter__main-input" type="number" value="1">
+                </div>
+                <div class="converter__second-currency">
+                    <select class="converter__second-select">
+                        <option value="pln">PLN</option>
+                        <option value="eur" selected>EUR</option>
+                        <option value="usd">USD</option>
+                        <option value="gbp">GBP</option>
+                    </select>
+                    <input class="converter__second-input" id="input2" type="number">
+                </div>
+            </div>
+
+            <div class="summary">
+                <h1>
+                    <span class="summary__main-input-integer"></span>
+                    <span class="summary__main-selected-integer"></span>
+                    <span class="summary__main-input-fraction"></span>
+                    <span class="summary__main-selected-fraction"></span>
+                    <span> = </span>
+                    <span class="summary__second-input-integer"></span>
+                    <span class="summary__second-selected-integer"></span>
+                    <span class="summary__second-input-fraction"></span>
+                    <span class="summary__second-selected-fraction"></span>
+                </h1>
+            </div>
+
+            <div class="date">
+                <div class="date__info">Dane według kursu NBP z dnia: <span class="date__rate">20.10.2019r.</span></div>
+            </div>
+        </section>
+
+        <section class="table">
+            <div class="table__header">
+                <div class="table__th">Nazwa waluty</div>
+                <div class="table__th">Kod waluty</div>
+                <div class="table__th">Średni kurs</div>
+            </div>
+            <div class="table__row">
+                <div class="table__td">
+                    <div class="table__flag"><svg width="42" height="29" viewBox="0 0 42 29" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M0 0H59.85V2.23164H0V0ZM0 4.46328H59.85V6.69492H0V4.46328ZM0 8.9209H59.85V11.1582H0V8.9209ZM0 13.3842H59.85V15.6158H0V13.3842ZM0 17.8475H59.85V20.0791H0V17.8475ZM0 22.3051H59.85V24.5367H0V22.3051ZM0 26.7684H59.85V29H0V26.7684Z"
+                                    fill="#BD3D44" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M0 2.23164H59.85V4.46329H0V2.23164ZM0 6.69493H59.85V8.9209H0V6.69493ZM0 11.1525H59.85V13.3842H0V11.1525ZM0 15.6158H59.85V17.8475H0V15.6158ZM0 20.0791H59.85V22.3108H0V20.0791ZM0 24.5367H59.85V26.7684H0V24.5367Z"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H23.9388V15.6158H0V0Z"
+                                    fill="#192F5D" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.99338 0.668358L2.21486 1.28574H2.91623L2.35021 1.66523L2.56555 2.28828L1.99338 1.90312L1.42736 2.28262L1.64269 1.66523L1.07053 1.28574H1.7842L1.99338 0.668358ZM5.98625 0.668358L6.20158 1.28574H6.9091L6.33693 1.66523L6.55226 2.28828L5.98625 1.90312L5.41408 2.28262L5.62941 1.66523L5.0634 1.28574H5.76476L5.98625 0.668358ZM9.97297 0.668358L10.1944 1.28574H10.8897L10.3236 1.66523L10.539 2.28828L9.96681 1.90312L9.4008 2.28262L9.61613 1.66523L9.04396 1.28574H9.75148L9.97297 0.668358ZM13.9658 0.668358L14.1812 1.28574H14.8887L14.3165 1.66523L14.538 2.28828L13.9658 1.90312L13.3937 2.28262L13.6152 1.66523L13.043 1.28574H13.7444L13.9658 0.668358ZM17.9526 0.668358L18.174 1.28574H18.8754L18.3094 1.66523L18.5247 2.28828L17.9526 1.90312L17.3865 2.28262L17.6019 1.66523L17.0359 1.28574H17.7372L17.9526 0.668358ZM21.9454 0.668358L22.1608 1.28574H22.8683L22.2961 1.66523L22.5176 2.28828L21.9454 1.90312L21.3733 2.28262L21.5947 1.66523L21.0226 1.28574H21.7301L21.9454 0.668358ZM3.99289 2.23164L4.20822 2.84902H4.91574L4.34357 3.22851L4.55275 3.8459L3.99904 3.4664L3.42687 3.8459L3.6299 3.22851L3.07619 2.84902H3.77756L3.99289 2.23164ZM7.97961 2.23164L8.20109 2.84902H8.90246L8.33029 3.22851L8.55177 3.8459L7.97961 3.4664L7.40744 3.8459L7.62892 3.22851L7.05675 2.84902H7.76427L7.97961 2.23164ZM11.9725 2.23164L12.1878 2.84902H12.8953L12.3232 3.22851L12.5385 3.8459L11.9725 3.4664L11.4003 3.8459L11.6156 3.22851L11.0496 2.84902H11.751L11.9725 2.23164ZM15.9592 2.23164L16.1807 2.84902H16.882L16.3099 3.22851L16.5314 3.8459L15.9592 3.4664L15.3932 3.8459L15.6085 3.22851L15.0363 2.84902H15.75L15.9592 2.23164ZM19.9521 2.23164L20.1674 2.84902H20.8749L20.3027 3.22851L20.5181 3.8459L19.9521 3.4664L19.3799 3.8459L19.5952 3.22851L19.0292 2.84902H19.7306L19.9521 2.23164ZM1.99338 3.78926L2.21486 4.41797H2.91623L2.35021 4.79746L2.56555 5.41484L1.99338 5.02968L1.42736 5.41484L1.64269 4.79179L1.07053 4.4123H1.7842L1.99338 3.78926ZM5.98625 3.78926L6.20158 4.4123H6.9091L6.33693 4.79179L6.55226 5.40918L5.98625 5.02402L5.41408 5.40918L5.62941 4.78613L5.0634 4.40664H5.76476L5.98625 3.78926ZM9.97297 3.78926L10.1944 4.4123H10.8897L10.3236 4.79179L10.539 5.40918L9.96681 5.02402L9.4008 5.40918L9.61613 4.78613L9.04396 4.40664H9.75148L9.97297 3.78926ZM13.9658 3.78926L14.1812 4.4123H14.8887L14.3165 4.79179L14.538 5.40918L13.9658 5.02402L13.3937 5.40918L13.6152 4.78613L13.043 4.40664H13.7444L13.9658 3.78926ZM17.9526 3.78926L18.174 4.4123H18.8754L18.3094 4.79179L18.5247 5.40918L17.9526 5.02402L17.3865 5.40918L17.6019 4.78613L17.0359 4.40664H17.7372L17.9526 3.78926ZM21.9454 3.78926L22.1608 4.4123H22.8683L22.2961 4.79179L22.5176 5.40918L21.9454 5.02402L21.3733 5.40918L21.5947 4.78613L21.0226 4.40664H21.7301L21.9454 3.78926ZM3.99289 5.35254L4.20822 5.96992H4.91574L4.34357 6.34941L4.5589 6.97246L3.99289 6.5873L3.42072 6.96679L3.63605 6.34941L3.07004 5.96992H3.7714L3.99289 5.35254ZM7.97961 5.35254L8.20109 5.96992H8.90246L8.33029 6.34941L8.55177 6.97246L7.97961 6.5873L7.40744 6.96679L7.62892 6.34941L7.05675 5.96992H7.76427L7.97961 5.35254ZM11.9725 5.35254L12.1878 5.96992H12.8953L12.3232 6.34941L12.5385 6.97246L11.9725 6.5873L11.4003 6.96679L11.6156 6.34941L11.0496 5.96992H11.751L11.9725 5.35254ZM15.9592 5.35254L16.1807 5.96992H16.882L16.316 6.34941L16.5314 6.97246L15.9592 6.5873L15.3932 6.96679L15.6085 6.34941L15.0363 5.96992H15.75L15.9592 5.35254ZM19.9521 5.35254L20.1674 5.96992H20.8749L20.3027 6.34941L20.5181 6.97246L19.9521 6.5873L19.3799 6.96679L19.5952 6.34941L19.0292 5.96992H19.7306L19.9521 5.35254ZM1.99338 6.91582L2.21486 7.5332H2.91623L2.35021 7.91269L2.56555 8.53574L1.99338 8.15058L1.42736 8.53007L1.64269 7.91269L1.07053 7.5332H1.7842L1.99338 6.91582ZM5.98625 6.91582L6.20158 7.5332H6.9091L6.33693 7.91269L6.55226 8.53007L5.98625 8.15058L5.41408 8.53007L5.62941 7.91269L5.0634 7.5332H5.76476L5.98625 6.91582ZM9.97297 6.91582L10.1944 7.5332H10.8897L10.3236 7.91269L10.539 8.53574L9.96681 8.15058L9.4008 8.53007L9.61613 7.91269L9.04396 7.5332H9.75148L9.97297 6.91582ZM13.9658 6.91582L14.1812 7.5332H14.8887L14.3165 7.91269L14.538 8.53574L13.9658 8.15058L13.3937 8.53007L13.6152 7.91269L13.043 7.5332H13.7444L13.9658 6.91582ZM17.9526 6.91582L18.174 7.5332H18.8754L18.3094 7.91269L18.5247 8.53574L17.9526 8.15058L17.3865 8.53007L17.6019 7.91269L17.0359 7.5332H17.7372L17.9526 6.91582ZM21.9454 6.91582L22.1608 7.5332H22.8683L22.2961 7.91269L22.5176 8.53574L21.9454 8.15058L21.3733 8.53007L21.5947 7.91269L21.0226 7.5332H21.7301L21.9454 6.91582ZM3.99289 8.4791L4.20822 9.09648H4.91574L4.34357 9.47597L4.5589 10.0934L3.99289 9.7082L3.42072 10.0934L3.63605 9.47031L3.07004 9.09082H3.7714L3.99289 8.4791ZM7.97961 8.4791L8.20109 9.09648H8.90246L8.33029 9.47597L8.55177 10.0934L7.97961 9.7082L7.40744 10.0934L7.62892 9.47031L7.05675 9.09082H7.76427L7.97961 8.4791ZM11.9725 8.4791L12.1878 9.09648H12.8953L12.3232 9.47597L12.5385 10.0934L11.9725 9.7082L11.4003 10.0934L11.6156 9.47031L11.0496 9.09082H11.751L11.9725 8.4791ZM15.9592 8.4791L16.1807 9.09648H16.882L16.316 9.47597L16.5314 10.0934L15.9592 9.7082L15.3932 10.0934L15.6085 9.47031L15.0363 9.09082H15.75L15.9592 8.4791ZM19.9521 8.4791L20.1674 9.09648H20.8749L20.3027 9.47597L20.5181 10.0934L19.9521 9.7082L19.3799 10.0934L19.5952 9.47031L19.0292 9.09082H19.7306L19.9521 8.4791ZM1.99338 10.0367L2.21486 10.6598H2.91623L2.35021 11.0393L2.56555 11.651L1.99338 11.2715L1.42736 11.651L1.64269 11.0336L1.07053 10.6541H1.7842L1.99338 10.0367ZM5.98625 10.0367L6.20158 10.6598H6.9091L6.33693 11.0393L6.55842 11.651L5.98625 11.2715L5.41408 11.651L5.63556 11.0336L5.0634 10.6541H5.76476L5.98625 10.0367ZM9.97297 10.0367L10.1944 10.6598H10.8897L10.3236 11.0393L10.539 11.651L9.96681 11.2715L9.4008 11.651L9.61613 11.0336L9.04396 10.6541H9.75148L9.97297 10.0367ZM13.9658 10.0367L14.1812 10.6598H14.8887L14.3165 11.0393L14.538 11.651L13.9658 11.2715L13.3937 11.651L13.6152 11.0336L13.043 10.6541H13.7444L13.9658 10.0367ZM17.9526 10.0367L18.174 10.6598H18.8754L18.3094 11.0393L18.5247 11.651L17.9526 11.2715L17.3865 11.651L17.6019 11.0336L17.0359 10.6541H17.7372L17.9526 10.0367ZM21.9454 10.0367L22.1608 10.6598H22.8683L22.2961 11.0393L22.5176 11.651L21.9454 11.2715L21.3733 11.651L21.5947 11.0336L21.0226 10.6541H21.7301L21.9454 10.0367ZM3.99289 11.6L4.20822 12.2174H4.91574L4.34357 12.5969L4.5589 13.2199L3.99289 12.8348L3.42072 13.2143L3.63605 12.5969L3.07004 12.2174H3.7714L3.99289 11.6ZM7.97961 11.6L8.20109 12.2174H8.90246L8.33029 12.5969L8.55177 13.2199L7.97961 12.8348L7.40744 13.2143L7.62892 12.5969L7.05675 12.2174H7.76427L7.97961 11.6ZM11.9725 11.6L12.1878 12.2174H12.8953L12.3232 12.5969L12.5385 13.2199L11.9725 12.8348L11.4003 13.2143L11.6156 12.5969L11.0496 12.2174H11.751L11.9725 11.6ZM15.9592 11.6L16.1807 12.2174H16.882L16.316 12.5969L16.5314 13.2199L15.9592 12.8348L15.3932 13.2143L15.6085 12.5969L15.0363 12.2174H15.75L15.9592 11.6ZM19.9521 11.6L20.1674 12.2174H20.8749L20.3027 12.5969L20.5181 13.2199L19.9521 12.8348L19.3799 13.2143L19.5952 12.5969L19.0292 12.2174H19.7306L19.9521 11.6ZM1.99338 13.1633L2.21486 13.7807H2.91623L2.35021 14.1602L2.56555 14.7775L1.99338 14.398L1.42736 14.7775L1.64269 14.1545L1.07053 13.775H1.7842L1.99338 13.1633ZM5.98625 13.1633L6.20158 13.7807H6.9091L6.33693 14.1602L6.55842 14.7775L5.98625 14.398L5.41408 14.7775L5.63556 14.1545L5.0634 13.775H5.76476L5.98625 13.1633ZM9.97297 13.1633L10.1944 13.7807H10.8897L10.336 14.1602L10.5513 14.7775L9.97912 14.398L9.4131 14.7775L9.62843 14.1545L9.05627 13.775H9.76379L9.97297 13.1633ZM13.9658 13.1633L14.1812 13.7807H14.8887L14.3165 14.1602L14.538 14.7775L13.9658 14.398L13.3937 14.7775L13.6152 14.1545L13.043 13.775H13.7444L13.9658 13.1633ZM17.9526 13.1633L18.174 13.7807H18.8754L18.3094 14.1602L18.5247 14.7775L17.9526 14.398L17.3865 14.7775L17.6019 14.1545L17.0359 13.775H17.7372L17.9526 13.1633ZM21.9454 13.1633L22.1608 13.7807H22.8683L22.2961 14.1602L22.5176 14.7775L21.9454 14.398L21.3733 14.7775L21.5947 14.1545L21.0226 13.775H21.7301L21.9454 13.1633Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0">
+                                    <rect width="42" height="29" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="table__currency-name">
+                        <div class="table__short-name">USD</div>
+                        <div class="table__full-name">Dolar amerykański</div>
+                    </div>
+                </div>
+                <div class="table__code">1 USD</div>
+                <div class="table__rate"><span class="usd-rate">3,84</span> zł</div>
+            </div>
+            <div class="table__row table__row-gray">
+                <div class="table__td">
+                    <div class="table__flag">
+                        <svg width="39" height="29" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-eu" viewBox="0 0 640 480">
+                            <defs>
+                                <g id="d">
+                                    <g id="b">
+                                        <path id="a" d="M0-1l-.3 1 .5.1z" />
+                                        <use transform="scale(-1 1)" xlink:href="#a" />
+                                    </g>
+                                    <g id="c">
+                                        <use transform="rotate(72)" xlink:href="#b" />
+                                        <use transform="rotate(144)" xlink:href="#b" />
+                                    </g>
+                                    <use transform="scale(-1 1)" xlink:href="#c" />
+                                </g>
+                            </defs>
+                            <path fill="#039" d="M0 0h640v480H0z" />
+                            <g fill="#fc0" transform="translate(320 242.3) scale(23.7037)">
+                                <use width="100%" height="100%" y="-6" xlink:href="#d" />
+                                <use width="100%" height="100%" y="6" xlink:href="#d" />
+                                <g id="e">
+                                    <use width="100%" height="100%" x="-6" xlink:href="#d" />
+                                    <use width="100%" height="100%" transform="rotate(-144 -2.3 -2.1)"
+                                        xlink:href="#d" />
+                                    <use width="100%" height="100%" transform="rotate(144 -2.1 -2.3)" xlink:href="#d" />
+                                    <use width="100%" height="100%" transform="rotate(72 -4.7 -2)" xlink:href="#d" />
+                                    <use width="100%" height="100%" transform="rotate(72 -5 .5)" xlink:href="#d" />
+                                </g>
+                                <use width="100%" height="100%" transform="scale(-1 1)" xlink:href="#e" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="table__currency-name">
+                        <div class="table__short-name">EUR</div>
+                        <div class="table__full-name">Euro</div>
+                    </div>
+                </div>
+                <div class="table__code">1 EUR</div>
+                <div class="table__rate"><span class="eur-rate">3,84</span> zł</div>
+            </div>
+            <div class="table__row">
+                <div class="table__td">
+                    <div class="table__flag">
+                        <svg width="39" height="29" viewBox="0 0 39 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0)">
+                                <path d="M-9.70532 0H48.4493V29.0773H-9.70532V0Z" fill="#012169" />
+                                <path
+                                    d="M-9.70532 0V3.24848L41.9467 29.0773H48.4493V25.8288L-3.20268 0H-9.70532ZM48.4493 0V3.24848L-3.20268 29.0773H-9.70532V25.8288L41.9467 0H48.4493Z"
+                                    fill="white" />
+                                <path
+                                    d="M14.5277 0V29.0773H24.2163V0H14.5277ZM-9.70532 9.69433V19.383H48.4493V9.69433H-9.70532Z"
+                                    fill="white" />
+                                <path
+                                    d="M-9.70532 11.6309V17.4464H48.4493V11.6309H-9.70532ZM16.4643 0V29.0773H22.2797V0H16.4643ZM-9.70532 29.0773L9.67766 19.383H14.0165L-5.37212 29.0773H-9.70532ZM-9.70532 0L9.67766 9.69433H5.34446L-9.70532 2.16944V0ZM24.7331 9.69433L44.1161 0H48.4493L29.0663 9.69433H24.7331ZM48.4493 29.0773L29.0663 19.383H33.3995L48.4493 26.9079V29.0773Z"
+                                    fill="#C8102E" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0">
+                                    <rect width="38.6667" height="29" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                    </div>
+                    <div class="table__currency-name">
+                        <div class="table__short-name">GBP</div>
+                        <div class="table__full-name">Funt szterling</div>
+                    </div>
+                </div>
+                <div class="table__code">1 GBP</div>
+                <div class="table__rate"><span class="gbp-rate">3,84</span> zł</div>
+            </div>
+            <div class="table__footer">
+                <div class="table__td">
+                    <div class="table__flag">
+                        <svg width="39" height="29" viewBox="0 0 39 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0)">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H38.6667V29H0V0Z" fill="#D52B1E" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M10.2708 11.7812H28.3958V17.2187H10.2708V11.7812Z" fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16.6146 5.4375H22.0521V23.5625H16.6146V5.4375Z" fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0">
+                                    <rect width="38.6667" height="29" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                    </div>
+                    <div class="table__currency-name">
+                        <div class="table__short-name">CHF</div>
+                        <div class="table__full-name">Frank szwajcarski</div>
+                    </div>
+                </div>
+                <div class="table__code">1 CHF</div>
+                <div class="table__rate"><span class="chf-rate">3,84</span> zł</div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__info">Design by Makka</div>
+    </footer>
+</body>
+
+</html>
